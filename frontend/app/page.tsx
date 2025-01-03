@@ -1,11 +1,18 @@
+"use client";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 export default function Home() {
   return (
     <div>
       <main>
         <section className=" h-screen pt-24 px-4 pb-5">
-          <div className=" relative rounded w-full overflow-hidden h-full bg-red-200">
+          <motion.div
+            className=" relative rounded w-full overflow-hidden h-full bg-red-200"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 1.5 }}
+          >
             <img
               src="https://images.unsplash.com/photo-1535400255456-984241443b29?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="hero-section-image"
@@ -22,7 +29,7 @@ export default function Home() {
             </Link>
             <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60" />
             <div className="absolute inset-0 bg-gradient-to-b from-black via-transparent to-transparent opacity-60" />
-          </div>
+          </motion.div>
         </section>
       </main>
     </div>

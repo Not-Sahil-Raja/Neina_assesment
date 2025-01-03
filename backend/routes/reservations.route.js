@@ -78,4 +78,24 @@ router.get("/get-bookings", async (req, res) => {
   }
 });
 
+router.delete("/delete-booking", async (req, res) => {
+  const { reservation_id } = req.body;
+
+  try {
+    const db = await connectDB();
+    const query = `DELETE FROM Reservations WHERE reservation_id = ?`;
+    const [result] = await db.query(query, [reservation_id]);
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ message: "Reservation not found." });
+    }
+
+    res.status(200).json({ message: "Reservation deleted successfully." });
+  } catch (error) {
+    console.log(error);
+    res
+      .status(500)
+      .json({ message: "Failed to delete reservation.", error: error.message });
+  }
+});
 export default router;

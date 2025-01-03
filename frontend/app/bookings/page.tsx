@@ -11,6 +11,7 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import axios from "axios";
+import { motion } from "framer-motion";
 
 interface Booking {
   reservation_id: number;
@@ -28,6 +29,23 @@ const Page = () => {
 
   const [customerName, setCustomerName] = useState("");
   const [customerEmail, setCustomerEmail] = useState("");
+
+  const DeleteBooking = ({ reservation_id }: { reservation_id: number }) => {
+    axios
+      .delete(`${process.env.NEXT_PUBLIC_SERVER_ADDR}/delete-booking`, {
+        data: { reservation_id },
+      })
+      .then((response) => {
+        setSelectedBooking((prevBookings) =>
+          prevBookings.filter(
+            (booking) => booking.reservation_id !== reservation_id
+          )
+        );
+      })
+      .catch((error) => {
+        console.error("There was an error deleting the booking!", error);
+      });
+  };
 
   const getBookings = (event: React.FormEvent) => {
     event.preventDefault();
@@ -56,7 +74,12 @@ const Page = () => {
   };
 
   return (
-    <div className=" flex flex-col px-10 py-9 pt-24 font-halenoir">
+    <motion.div
+      className=" flex flex-col px-10 py-9 pt-24 font-halenoir"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ type: "spring", stiffness: 100, damping: 20 }}
+    >
       <div className=" mb-6">
         <form
           className=" flex md:flex-row flex-col gap-2 "
@@ -126,7 +149,17 @@ const Page = () => {
                 <TableCell>{formatTime(booking.time_slot)}</TableCell>
                 <TableCell>{booking.guest_count}</TableCell>
                 <TableCell>{booking.customer_name}</TableCell>
-                <TableCell></TableCell>
+                <TableCell>
+                  <button></button>
+                  <button
+                    className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+                    onClick={() =>
+                      DeleteBooking({ reservation_id: booking.reservation_id })
+                    }
+                  >
+                    Delete Booking
+                  </button>
+                </TableCell>
               </TableRow>
             ))}
           </TableBody>
@@ -135,7 +168,7 @@ const Page = () => {
           <p className="text-center text-gray-500 mt-4">No bookings found.</p>
         )}
       </div>
-    </div>
+    </motion.div>
   );
 };
 

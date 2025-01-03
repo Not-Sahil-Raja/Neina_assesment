@@ -147,7 +147,7 @@ const ReserveForm = ({
   };
 
   return (
-    <div className="lg:px-52 md:px-20 sm:px-5 px-3 py-5 flex flex-col h-fit space-y-2 font-halenoir">
+    <div className="lg:px-52 md:px-20 sm:px-5 px-3 py-5 flex flex-col min-h-screen space-y-2 font-halenoir">
       <div className=" mt-5 border-b pb-1 mb-2">
         <h1 className=" text-4xl">Book A Table</h1>
         <h5 className=" text-lg leading-tight md:leading-normal text-black/75">
@@ -155,7 +155,7 @@ const ReserveForm = ({
         </h5>
       </div>
       <form
-        className="flex flex-col grow space-y-3"
+        className="flex  flex-col justify-evenly grow space-y-3"
         onSubmit={(e) => {
           e.preventDefault();
           const reserveDetail: ReserveDetail = {
