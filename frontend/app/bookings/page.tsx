@@ -35,7 +35,7 @@ const Page = () => {
       .delete(`${process.env.NEXT_PUBLIC_SERVER_ADDR}/delete-booking`, {
         data: { reservation_id },
       })
-      .then((response) => {
+      .then(() => {
         setSelectedBooking((prevBookings) =>
           prevBookings.filter(
             (booking) => booking.reservation_id !== reservation_id
