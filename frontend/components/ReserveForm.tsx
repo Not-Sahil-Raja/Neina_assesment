@@ -147,10 +147,10 @@ const ReserveForm = ({
   };
 
   return (
-    <div className=" px-52 py-5 flex flex-col h-fit space-y-2 font-halenoir">
+    <div className="lg:px-52 md:px-20 sm:px-5 px-3 py-5 flex flex-col h-fit space-y-2 font-halenoir">
       <div className=" mt-5 border-b pb-1 mb-2">
         <h1 className=" text-4xl">Book A Table</h1>
-        <h5 className=" text-lg">
+        <h5 className=" text-lg leading-tight md:leading-normal text-black/75">
           Secure your spot for an unforgettable dining experience
         </h5>
       </div>
@@ -169,7 +169,7 @@ const ReserveForm = ({
           reserveTable(reserveDetail);
         }}
       >
-        <div className=" flex  gap-5 ">
+        <div className=" flex md:flex-row md:items-stretch items-center flex-col gap-5 mb-3 md:mb-4 lg:mb-5">
           {/* Select the dine date  */}
           <div className=" flex flex-col ">
             <label htmlFor="dineDate" className=" text-lg font-medium mb-2">
@@ -191,7 +191,7 @@ const ReserveForm = ({
             </label>
 
             {/* Rendering all the time slot then disabling the already reserved time slots  */}
-            <div className=" grid grid-cols-4 gap-4 px-4 grow select-none">
+            <div className=" grid grid-cols-4 md:gap-4 gap-2 md:px-4 px-2 grow select-none">
               {timeSlot.map((slot, index) => (
                 <label
                   key={index}
@@ -221,9 +221,9 @@ const ReserveForm = ({
             </div>
           </div>
         </div>
-        <div className=" flex justify-stretch">
+        <div className=" flex md:flex-row gap-3 md:gap-0 flex-col justify-stretch">
           {/* Select the number of guests  */}
-          <div className="flex flex-col mr-5">
+          <div className="flex flex-col md:mr-5 md:mb-0 mb-3">
             <label htmlFor="guest" className=" text-lg font-medium mb-1">
               Number of Guest
             </label>
@@ -237,7 +237,7 @@ const ReserveForm = ({
               >
                 -
               </button>
-              <p className=" mx-auto  ">{guests}</p>
+              <p className=" md:mx-auto mx-4">{guests}</p>
               <button
                 type="button"
                 onClick={() => {
@@ -288,7 +288,7 @@ const ReserveForm = ({
         </div>
 
         {/* Name of the customer and  customer email  */}
-        <div className=" flex h gap-2">
+        <div className=" flex md:flex-row flex-col gap-2">
           <div className=" flex flex-col w-full">
             <label htmlFor="name" className=" mb-1 cursor-pointer font-medium">
               Name

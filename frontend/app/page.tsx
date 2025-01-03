@@ -11,12 +11,12 @@ export default function Home() {
               alt="hero-section-image"
               className=" w-full h-full object-cover"
             />
-            <h1 className=" absolute top-12 left-1/2 -translate-x-1/2 z-[1] text-white text-8xl">
+            <h1 className=" absolute top-12 left-1/2 -translate-x-1/2 z-[1] text-white md:text-8xl text-5xl text-center">
               Welcome to Hot Plate
             </h1>
             <Link
               href="/reservation"
-              className="absolute bottom-12 left-1/2 -translate-x-1/2 z-[1] text-3xl underline text-white py-2 px-4 "
+              className="absolute bottom-12 left-1/2 -translate-x-1/2 z-[1] md:text-3xl text-2xl underline text-white py-2 px-4 "
             >
               Book A Table
             </Link>

@@ -33,13 +33,15 @@ const Page = () => {
           />
 
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 p-4 z-[2] flex flex-col justify-center items-center">
-            <h1 className="text-white text-7xl medium">Hot Plate</h1>
-            <p className="text-xl md:text-2xl text-white drop-shadow-md max-w-2xl mx-auto mb-8 text-center">
+            <h1 className="text-white md:text-7xl text-5xl medium whitespace-nowrap">
+              Hot Plate
+            </h1>
+            <p className="text-lg md:text-2xl md:leading-normal leading-tight text-white/85 md:text-white drop-shadow-md max-w-2xl mx-auto mb-8 text-center">
               Sizzling Flavors, Unforgettable Moments
             </p>
 
             <button
-              className="bg-yellow-800 border text-lg border-yellow-900 text-white px-4 py-2 rounded"
+              className="bg-yellow-800 border text-lg border-yellow-900 text-white px-2 py-1 md:px-4 md:py-2 rounded"
               onClick={() => {
                 const formSection = document.querySelector(
                   ".w-full.min-h-screen"
@@ -66,7 +68,7 @@ const Page = () => {
         {showBookingSummary && bookingSummary && (
           <div
             ref={bookingTicketRef}
-            className=" font-halenoir mt-10 w-full flex flex-col px-52  py-4"
+            className="  mt-10 w-full lg:px-52 md:px-20 sm:px-5 px-3 py-5 flex flex-col h-fit space-y-2 font-halenoir"
           >
             <h1 className=" text-4xl text-center border-t border-stone-400/65 py-4">
               Here is Your Booking Summary !

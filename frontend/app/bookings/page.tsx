@@ -58,7 +58,10 @@ const Page = () => {
   return (
     <div className=" flex flex-col px-10 py-9 pt-24 font-halenoir">
       <div className=" mb-6">
-        <form className=" flex gap-2 " onSubmit={getBookings}>
+        <form
+          className=" flex md:flex-row flex-col gap-2 "
+          onSubmit={getBookings}
+        >
           <div className="flex-1">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"
