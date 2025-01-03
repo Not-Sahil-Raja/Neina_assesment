@@ -23,7 +23,7 @@ interface Booking {
   created_at: string;
 }
 
-const page = () => {
+const Page = () => {
   const [selectedBooking, setSelectedBooking] = useState<Booking[]>([]);
 
   const [customerName, setCustomerName] = useState("");
@@ -136,4 +136,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

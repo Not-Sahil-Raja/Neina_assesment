@@ -5,7 +5,7 @@ import { BookingSummary } from "@/types";
 import { X } from "lucide-react";
 import React, { useEffect, useRef, useState } from "react";
 
-const page = () => {
+const Page = () => {
   const [showBookingSummary, setShowBookingSummary] = useState<boolean>(false);
   const [bookingSummary, setBookingSummary] = useState<BookingSummary>({
     table_id: 0,
@@ -96,4 +96,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
