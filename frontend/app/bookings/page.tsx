@@ -92,16 +92,16 @@ const Page = () => {
             />
           </div>
           <button
-            className="bg-stone-500 hover:bg-stone-700 disabled:opacity-50 h-fit mt-auto text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            className="bg-stone-600 hover:bg-stone-700 disabled:opacity-35 h-fit mt-auto text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="submit"
             disabled={customerName == "" || customerEmail == ""}
           >
-            Submit
+            Find Bookings
           </button>
         </form>
       </div>
 
-      <div>
+      <div className=" min-h-[80vh]">
         <Table>
           <TableHeader>
             <TableRow>
